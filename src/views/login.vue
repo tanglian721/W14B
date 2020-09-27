@@ -1,10 +1,13 @@
 <template>
   <div id="loginPage">
-    <img src="../assets/logo.png" alt="">
+    <transition appear name="logo">
+    <img id="logo" src="../assets/logo.png" alt="">
+    </transition>
     <div id="bg">
     <img id="left" src="../assets/left.png" alt="">
     <img id="right" src="../assets/right.png" alt="">
     </div>
+    <transition appear name="login">
     <div id="loginInput">
      <p>Username</p>
       <input type="text" v-model="username" value="eve.holt@reqres.in"> <!--track the value eve.holt@reqres.in-->
@@ -14,7 +17,10 @@
       <transition mode="out-in">
       <h3 v-if="onlogin">{{status}}</h3>
       </transition>
-      </div>
+      <P>eve.holt@reqres.in</P>
+    </div>
+    </transition>
+
       <!-- <router-link to="/game">Home</router-link> | -->
   </div>
 </template>
@@ -71,13 +77,31 @@ export default {
 
 <style lang="scss" scoped>
 #loginPage{
-    margin-top: 10vh;
+  margin-top: 10vh;
   position: relative;
   width: 100%;
   height: 60vh;
   display: grid;
   align-items: center;
   justify-items: center; 
+}
+.logo-enter{
+  transform: translateY(80%);
+}
+.logo-enter-active{
+  transition: transform 1.5s ;
+}
+.login-enter{
+  opacity: 0;
+}
+.login-enter-active{
+  transition: opacity 2.5s;
+}
+.v-enter{
+  transform: rotateX(90deg);;
+}
+.v-enter-active{
+  transition: transform 0.5s ;
 }
 #bg{
   z-index: -1;

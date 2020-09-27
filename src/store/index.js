@@ -8,10 +8,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         token: "",
-        score: 0,
         user: 10,
         com: 10,
-        result: "READY?",
+        result: "READY",
         userScore: 0,
         comScore: 0,
     },
@@ -30,7 +29,6 @@ export default new Vuex.Store({
         userShape(state, data) {
             state.user = data
             this.commit("comShape")
-            this.commit("checkWinner")
         },
         comShape(state) {
             let precent = Math.random();
@@ -83,7 +81,8 @@ export default new Vuex.Store({
         },
         ready(state) {
             state.user = 10;
-            state.com = 10
+            state.com = 10;
+            state.result = "READY"
         }
 
     },
@@ -92,7 +91,8 @@ export default new Vuex.Store({
             context.commit("ready");
             setTimeout(() => {
                 context.commit("userShape", data);
-            }, 500);
+                this.commit("checkWinner")
+            }, 800);
         }
 
     },

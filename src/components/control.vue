@@ -1,12 +1,12 @@
 <template>
     <div id="control">
     <div id="controls">
+        <button @click="restart">RESTART</button>
         <img src="../assets/rock.png" alt="" @click="rock">
         <img src="../assets/scissors.png" alt="" @click="scissors">
         <img src="../assets/paper.png" alt="" @click="paper">
-    </div>
-        <button @click="restart">RESTART</button>
         <button @click="logout">LOGOUT</button>
+    </div>
     </div>
 </template>
 
@@ -44,7 +44,7 @@
     display: grid;
     align-items: center;
     justify-items: center; 
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     img{
         width: 40%;
         filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));

@@ -1,6 +1,6 @@
 <template>
     <div id="user">
-         <transition mode="in" enter-active-class="animate__animated animate__tada">
+         <transition mode="out-in" enter-active-class="animate__animated animate__tada">
         <img v-if="comShape === 1" src="../assets/rock-left.png" alt="" >
         <img v-if="comShape === 0" src="../assets/scissors-left.png" alt="" >
         <img v-if="comShape === -1" src="../assets/paper-left.png" alt="" >

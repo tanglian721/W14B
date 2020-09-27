@@ -7,11 +7,14 @@
        <game-com></game-com>
        </div>
        <game-control></game-control>
+       <audio  id="bgm" loop="loop">
+         <source src="../assets/Barley Rag.mp3">
+       </audio>
      </div>
      <div v-else class="notlogin" key="notLgoin">
          <h2>You have not login!</h2> 
          <router-link to="/">Login Page</router-link>
-       </div>
+      </div>
   </div>
 </template>
 
@@ -68,7 +71,7 @@ import GameControl from "../components/control"
   overflow: hidden;
   #score{
     width: 80%;
-    height: 20vh;
+    height: 15vh;
   }
   #battle-area{
     width: 100%;
@@ -91,7 +94,7 @@ import GameControl from "../components/control"
         display: grid;
     align-items: center;
     justify-items: center; 
-    width: 50%;
+    width: 80%;
     height: 20vh;
   }
   .notlogin{
