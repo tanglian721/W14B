@@ -1,6 +1,6 @@
 <template>
   <div>
-     <div v-if="login" id="login">
+     <div v-if="login" class="login" key="login">
        <game-score></game-score>
        <div id="battle-area">
        <game-user></game-user>
@@ -8,7 +8,7 @@
        </div>
        <game-control></game-control>
      </div>
-     <div v-else>
+     <div v-else class="notlogin" key="notLgoin">
          <h2>You have not login!</h2> 
          <router-link to="/">Login Page</router-link>
        </div>
@@ -57,7 +57,7 @@ import GameControl from "../components/control"
   margin: 0;
   padding: 0;
 }
-#login{
+.login{
   width: 100%;
   height: 100vh;
   position: relative;
@@ -93,6 +93,16 @@ import GameControl from "../components/control"
     justify-items: center; 
     width: 50%;
     height: 20vh;
+  }
+  .notlogin{
+    width: 100%;
+    height: 50vh;
+    display: grid;
+    align-items: center;
+    justify-items: center; 
+    h2{
+      color: green;
+    }
   }
 
 }

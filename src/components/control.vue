@@ -6,6 +6,7 @@
         <img src="../assets/paper.png" alt="" @click="paper">
     </div>
         <button @click="restart">RESTART</button>
+        <button @click="logout">LOGOUT</button>
     </div>
 </template>
 
@@ -24,6 +25,10 @@
             },
             restart(){
                 this.$store.commit("cleanbCookies")
+            },
+            logout(){
+                this.$store.commit("logout")
+                this.$router.push("/")  
             }
         },
         computed:{
@@ -41,7 +46,7 @@
     justify-items: center; 
     grid-template-columns: 1fr 1fr 1fr;
     img{
-        width: 50%;
+        width: 40%;
         filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
         &:hover{
             filter: drop-shadow(12px 12px 10px rgba(0,0,0,0.5));
@@ -53,7 +58,7 @@
   }
   button{
       font-size: 1rem;
-      padding: 10px;
+      padding: 5px 10px;
       border-radius: 20px;
       filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
         &:hover{

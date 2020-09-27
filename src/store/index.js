@@ -9,8 +9,8 @@ export default new Vuex.Store({
     state: {
         token: "",
         score: 0,
-        user: "",
-        com: "",
+        user: 10,
+        com: 10,
         result: "READY?",
         userScore: 0,
         comScore: 0,
@@ -23,6 +23,9 @@ export default new Vuex.Store({
         loginError: function(state) {
             state.loginState = true;
             state.status = "Login Error"
+        },
+        logout: function() {
+            tokenCookie.remove("token")
         },
         userShape(state, data) {
             state.user = data
@@ -68,19 +71,19 @@ export default new Vuex.Store({
             if (score.get("userScore") != undefined) {
                 score.remove("userScore");
                 state.userScore = 0;
-                state.user = "";
+                state.user = 10;
 
             }
             if (score.get("comScore") != undefined) {
                 score.remove("comScore");
                 state.comScore = 0
-                state.com = ""
+                state.com = 10
             }
             location.reload()
         },
         ready(state) {
-            state.user = "";
-            state.com = ""
+            state.user = 10;
+            state.com = 10
         }
 
     },

@@ -1,16 +1,17 @@
 <template>
     <div id="com">
          <transition mode="out-in"
-         name="action" class="move">
+          enter-active-class="animate__animated animate__tada"
+         >
         <img v-if="comShape === 1" src="../assets/rock-right.png" alt="">
-        <img v-else-if="comShape === 0" src="../assets/scissors-right.png" alt="">
-        <img v-else-if="comShape === -1" src="../assets/paper-right.png" alt="">
-        <div v-else id="coms">
+        <img v-if="comShape === 0" src="../assets/scissors-right.png" alt="">
+        <img v-if="comShape === -1" src="../assets/paper-right.png" alt="">
+        </transition>
+        <div v-if="comShape === 10" id="coms">
         <img src="../assets/rock-right.png" alt="">
         <img src="../assets/scissors-right.png" alt="">
         <img src="../assets/paper-right.png" alt="">
         </div>
-           </transition>
     </div>
 </template>
 
@@ -27,6 +28,7 @@
 </script>
 
 <style lang="scss" scoped>
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css);
 #com{
     display: grid;
     align-items: center;
@@ -42,37 +44,5 @@
       }
     }
 }
-.action-enter-active{
-animation: wobble 0.5s ease-out
-}
-@keyframes wobble {
-    0% {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0)
-    }
-    15% {
-        -webkit-transform: translate3d(-25%, 0, 0) rotate(-5deg);
-        transform: translate3d(-25%, 0, 0) rotate(-5deg)
-    }
-    30% {
-        -webkit-transform: translate3d(20%, 0, 0) rotate(3deg);
-        transform: translate3d(20%, 0, 0) rotate(3deg)
-    }
-    45% {
-        -webkit-transform: translate3d(-15%, 0, 0) rotate(-3deg);
-        transform: translate3d(-15%, 0, 0) rotate(-3deg)
-    }
-    60% {
-        -webkit-transform: translate3d(10%, 0, 0) rotate(2deg);
-        transform: translate3d(10%, 0, 0) rotate(2deg)
-    }
-    75% {
-        -webkit-transform: translate3d(-5%, 0, 0) rotate(-1deg);
-        transform: translate3d(-5%, 0, 0) rotate(-1deg)
-    }
-    to {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0)
-    }
-}
+
 </style>
