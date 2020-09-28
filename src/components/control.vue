@@ -15,7 +15,7 @@
         name: "game-control",
         methods: {
             rock() {
-                this.$store.dispatch("actionUser", 1)
+                this.$store.dispatch("actionUser", 1);
             },
             scissors() {
                 this.$store.dispatch("actionUser", 0)

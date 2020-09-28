@@ -7,9 +7,7 @@
        <game-com></game-com>
        </div>
        <game-control></game-control>
-       <audio  id="bgm" loop="loop">
-         <source src="../assets/Barley Rag.mp3">
-       </audio>
+     
      </div>
      <div v-else class="notlogin" key="notLgoin">
          <h2>You have not login!</h2> 

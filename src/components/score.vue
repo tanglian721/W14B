@@ -1,15 +1,28 @@
 <template>
     <div id="score">
-        <button @click="off" id="bmgC">BMG</button>
+        <button @click="off" id="bmgC">BGM</button>
         <div id="scroes">
             <h2 id="user">USER: {{userScore}}</h2>
             <h2 id="com">COM: {{comScore}}</h2>
         </div>
          <transition mode="out-in" enter-active-class="animate__animated animate__flipInY">
-        <h2 v-if="result === 'READY'" id="winner" key="ready">READY???</h2>
+        <h2 v-if="result === 'READY'" id="ready" key="ready">READY???</h2>
         <h2 v-else id="winner" key="result">{{result}}</h2>
         </transition>
-        
+        <audio  autoplay id="bgm" loop="loop" >
+         <source src="../assets/Barley Rag.mp3" type="audio/mpeg">
+       </audio>
+        <audio  id="win">
+         <source src="../assets/win.mp3" type="audio/mpeg">
+        </audio>
+        <audio  id="lose">
+         <source src="../assets/Boo 2.mp3" type="audio/mpeg">
+        </audio>
+        <audio  id="draw">
+         <source src="../assets/oops-try-again.mp3" type="audio/mpeg">
+        </audio>
+
+
 
     </div>
 </template>
@@ -24,16 +37,16 @@
         },
         methods: {
             off(){
-                this.audio = document.getElementById('bgm');
+               this.audio = document.getElementById('bgm');
                 if(this.audio.paused) {
                     this.audio.play();
                 } else {
                     this.audio.pause();
                 }
             },
-            auto(){
-               this.audio = document.getElementById('bgm');
-               this.audio.play();
+            volume(){
+                this.audio = document.getElementById('bgm');
+                this.audio.volume="0.1"
             }
         },
         computed:{
@@ -48,7 +61,7 @@
             },
         },
          mounted:function(){
-            this.auto()
+             this.volume()
          }
     }
 </script>
@@ -71,6 +84,11 @@
         text-align: center;
     }
   }
+#winner{
+            font-size: 2.5rem;
+            color: deeppink;
+            text-shadow: 10px 10px 25px gray;
+        }
   }
   h2{
       width: 100%;

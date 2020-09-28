@@ -10,6 +10,9 @@
            <img src="../assets/scissors-left.png" alt="">
            <img src="../assets/paper-left.png" alt="">
         </div>
+        <audio  id="action">
+         <source src="../assets/hi.mp3">
+       </audio>
     </div>
 </template>
 

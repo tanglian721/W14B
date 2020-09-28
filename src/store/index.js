@@ -13,6 +13,9 @@ export default new Vuex.Store({
         result: "READY",
         userScore: 0,
         comScore: 0,
+        actionAudio: "",
+        resulitAudio: "",
+
     },
     mutations: {
         onlogin: function(state, data) {
@@ -29,6 +32,22 @@ export default new Vuex.Store({
         userShape(state, data) {
             state.user = data
             this.commit("comShape")
+        },
+        actionSound(state) {
+            state.actionAudio = document.getElementById('action')
+            state.actionAudio.play()
+        },
+        resultAudioSound(state) {
+            if (state.result === "YOU WIN!!!") {
+                state.resultAudio = document.getElementById('win')
+                state.resultAudio.play()
+            } else if (state.result === "YOU LOSE!!!") {
+                state.resultAudio = document.getElementById('lose')
+                state.resultAudio.play()
+            } else {
+                state.resultAudio = document.getElementById('draw')
+                state.resultAudio.play()
+            }
         },
         comShape(state) {
             let precent = Math.random();
@@ -54,7 +73,7 @@ export default new Vuex.Store({
             } else if (num === 0) {
                 state.result = "YOU DRAW !!!"
             } else {
-                state.result = "READY ?"
+                state.result = "READY"
             }
         },
         loadingCookies(state) {
@@ -90,9 +109,17 @@ export default new Vuex.Store({
         actionUser: function(context, data) {
             context.commit("ready");
             setTimeout(() => {
+
+                context.commit("actionSound")
+            }, 500);
+            setTimeout(() => {
                 context.commit("userShape", data);
-                this.commit("checkWinner")
+                // context.commit("checkWinner")
             }, 800);
+            setTimeout(() => {
+                context.commit("checkWinner")
+                context.commit("resultAudioSound")
+            }, 1500);
         }
 
     },
