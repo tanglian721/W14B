@@ -1,11 +1,11 @@
 <template>
     <div id="control">
     <div id="controls">
-        <button @click="restart">RESTART</button>
+        <img @click="restart" src="../assets/reset.png">
         <img src="../assets/rock.png" alt="" @click="rock">
         <img src="../assets/scissors.png" alt="" @click="scissors">
         <img src="../assets/paper.png" alt="" @click="paper">
-        <button @click="logout">LOGOUT</button>
+        <img @click="logout" src="../assets/exit.png">
     </div>
     </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
     <div id="score">
-        <button @click="off" id="bmgC">BGM</button>
+        <img @click="off" id="bmgC" src="../assets/play.png">
         <div id="scroes">
             <h2 id="user">USER: {{userScore}}</h2>
             <h2 id="com">COM: {{comScore}}</h2>
@@ -84,7 +84,7 @@
         text-align: center;
     }
   }
-#winner{
+  #winner{
             font-size: 2.5rem;
             color: deeppink;
             text-shadow: 10px 10px 25px gray;
@@ -96,11 +96,19 @@
       font-size: 2rem;
   }
   #bmgC{
+      width: 5vw;
       position: absolute;
       left: 0;
-      top: 0;
+      top: 1vh;
       font-size: 1rem;
       padding: 5px;
       border-radius: 20px;
+      filter: drop-shadow(8px 8px 15px rgba(0,0,0,0.5));
+      &:hover{
+            filter: drop-shadow(8px 8px 10px rgba(0,0,0,0.5));
+        }
+     &:active{
+            filter: drop-shadow(0px 0px 0px rgba(0,0,0,0.5));
+        }
   }
 </style>
