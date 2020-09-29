@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="game">
      <div v-if="login" class="login" key="login">
        <game-score></game-score>
        <div id="battle-area">
@@ -57,6 +57,9 @@ import GameControl from "../components/control"
 *{
   margin: 0;
   padding: 0;
+}
+#game{
+  background-image: url("../assets/depositphotos_233080596-stock-illustration-rock-paper-scissors-pattern-white.jpg");
 }
 .login{
   width: 100%;

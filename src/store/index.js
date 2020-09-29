@@ -108,18 +108,18 @@ export default new Vuex.Store({
     actions: {
         actionUser: function(context, data) {
             context.commit("ready");
-            setTimeout(() => {
+            // setTimeout(() => {
 
-                context.commit("actionSound")
-            }, 500);
+            context.commit("actionSound")
+                // }, 500);
             setTimeout(() => {
                 context.commit("userShape", data);
                 // context.commit("checkWinner")
-            }, 800);
+            }, 1400);
             setTimeout(() => {
                 context.commit("checkWinner")
                 context.commit("resultAudioSound")
-            }, 1500);
+            }, 1800);
         }
 
     },

@@ -19,7 +19,7 @@
          <source src="../assets/Boo 2.mp3" type="audio/mpeg">
         </audio>
         <audio  id="draw">
-         <source src="../assets/oops-try-again.mp3" type="audio/mpeg">
+         <source src="../assets/Elaine try again_1.mp3" type="audio/mpeg">
         </audio>
 
 
@@ -86,7 +86,7 @@
   }
   #winner{
             font-size: 2.5rem;
-            color: deeppink;
+            color: red;
             text-shadow: 10px 10px 25px gray;
         }
   }
